@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:url" content="http://rezero.itguny04.xyz">
+    <meta property="og:title" content="Re: Zero">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="창무의 Re: 제로부터 시작하는 이 세계 생활">
+    <meta property="og:image" content="https://w.namu.la/s/8c9f618588822065df8a03210d443b7370a40e7da88e80266120a40f5ff7f3bd297c96c41a15a2f07698e207c17ddd384e637d4c179cd1bcdf0fa1ae4583285636e65744fa21ac51b2b4304f8180219a3222209410904d22a4576cbc3261e6ec6bc364384eb4dda98c31e869b2ae2117">
+    <title>Re.zero</title>
+<style>
+@font-face {
+    font-family: jua;
+    src: url("fonts/BMJUA_ttf.ttf");
+}
+
+h1 {
+    color: rgb(255, 0, 234);
+    margin-top: 33px;
+    font-family: 'jua';
+}
+
+.heart {
+    color:rgb(255, 0, 234)
+}
+
+.heart:hover {
+    color: rgb(243, 0, 0)
+}
+
+body {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    background-image: url("body_background.png");
+    background-size: cover;
+}
+
+#user {
+    border-collapse: collapse;
+    border: 2px solid rgb(255, 0, 234);
+    margin-top: 33px;
+    margin-bottom: 60px;
+    background: url('picture/1.jpg'); 
+    background-size: cover;
+}
+
+tr {
+    height: 50px;
+}
+
+td {
+    width: 80px;
+    text-align: center;
+    font-size: large;
+    background-color: rgba(206, 206, 206, 0.35);
+    
+}
+
+td:hover {
+    width: 80px;
+    text-align: center;
+    font-size: large;
+    background-color: rgba(170, 169, 169, 0.35);
+    
+}
+
+p {
+    padding: 10px;
+    font-size: x-large;
+    color: black;
+    font-family: 'jua';
+    background-color: rgba(196, 192, 192, 0.35);
+}
+
+
+</style>
+</head>
+<body>
+    <center>
+
+    <h1>❤ 창무의 Re.Zero부터 시작하는 이세계 생활 ❤</h1>
+    
+    <table id="user" border="1">
+
+    </table>
+
+    <script>
+
+        function change_img() {
+            alert("이스터에그 발견!")
+            var rem = Math.floor(Math.random()*4+1);
+            document.getElementById('user').style.backgroundImage = 'url("picture/'+rem+'.jpg")';
+        }
+
+        var user = 83
+        var line = 7
+        var template = ''
+
+        var r = Math.floor(Math.random()*80+1);
+        var k = Math.round((user - user%line)/line + 1);
+
+        for(i=1; i<=k; i-=(-1)){
+            template += "<tr>";
+            for (j=1; j<=line; j++){
+                if((j+(i-1)*line)==r) {
+                    template+='<td onclick="change_img()"><span class="heart">❤</span><b> '+(j+(i-1)*line)+'</b></td>';
+                    continue;
+                }
+
+                if(i==k && user%line+(!!1)==j) {
+                    template+='<td><span class="heart">❤</span><b>창무</b><span class="heart">❤</span></td>';
+                    break;
+                } else {
+                    template+='<td><span class="heart">❤</span><b> '+(j+(i-1)*line)+'</b></td>';
+                }
+            }
+            template+="</tr>";
+        }
+
+        document.getElementById('user').innerHTML = template;
+
+        var text = [];
+        text[0] = "말할 수 있어. 뭐가 어떻게 되더라도 넌 사라지지 않아. 난 널 좋아해."
+        text[1] = "우는게 어울리는 여자가 어디있냐? 그렇게 서툴게 우는 여자 난 한번도 본적이 없어!!"
+        text[2] = "내가 반드시, 널 구하겠어. 꼭 그럴거야. 내가 반드시... 기다려, 렘. 너의 영웅이 반드시 널 맞이하러 갈게"
+        text[3] = "그래, 보고 있어줘. 특등석에서. 네가 반한 남자가 최고로 멋진 영웅이 되는 모습을!"
+        text[4] = "나는 네가 정말 싫다. 하지만 그렇기에 믿어. 네가 누구보다 뛰어난 기사라는 걸, 내 수치가 증명하고 있으니까."
+        text[5] = "내가 반드시 널 구해 주겠어."
+        text[6] = "나의 이름은 나츠키 스바루。무지몽매하고 천하불멸의 무일푼!"
+        
+        setInterval( ()=> {
+            document.getElementById('text_field').innerText = '"'+text[Math.floor(Math.random()*7)]+'"';
+        }, 15000)
+
+    </script>
+    <p><span id="text_field">"설령 네가 잊더라도 내가 너희들을 잊지 않겠어"</span></p>
+
+    </center>
+</body>
+</html>
